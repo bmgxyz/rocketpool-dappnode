@@ -1,0 +1,12 @@
+{
+  "name": "rocketpool-unofficial.public.dappnode.eth",
+  "version": "0.1.0",
+  "description": "Unofficial Rocket Pool package for DAppNode",
+  "type": "service",
+  "author": "Bradley Gannon <bradley@bradleygannon.com>",
+  "categories": ["ETH2.0"],
+  "links": {
+    "homepage": "https://github.com/bmgxyz/rocketpool-dappnode"
+  },
+  "license": "GPL-3.0"
+}

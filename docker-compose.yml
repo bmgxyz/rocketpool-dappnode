@@ -1,0 +1,6 @@
+version: "3.4"
+services:
+  rocketpool-unofficial.public.dappnode.eth:
+    build: .
+    image: "rocketpool-unofficial.public.dappnode.eth:0.1.0"
+    restart: unless-stopped
