@@ -1,0 +1,43 @@
+rocketpool:
+  storageAddress: 0xA85A8022E8F28E49B8BBfb792f93ee914B342C3b
+smartnode:
+  projectName: rocketpool
+  image: rocketpool/smartnode:v0.0.10
+  passwordPath: /.rocketpool/password
+  walletPath: /.rocketpool/wallet
+  validatorKeychainPath: /.rocketpool
+  validatorRestartCommand: "echo 'this shouldn't happen'"
+chains:
+  eth1:
+    provider: http://goerli-geth.dappnode:8545
+    wsProvider: ws://goerli-geth.dappnode:8546
+    chainID: 5 # goerli chain
+    client:
+      options:
+      - id: geth
+        name: Geth
+        desc: made by the Ethereum Foundation
+        image: ethereum/client-go:v1.9.24
+        link: https://geth.ethereum.org/
+        params:
+        - name: Ethstats Label
+          desc: optional - for reporting Eth 1.0 node status to ethstats.net
+          env: ETHSTATS_LABEL
+        - name: Ethstats Login
+          desc: optional - for reporting Eth 1.0 node status to ethstats.net
+          env: ETHSTATS_LOGIN
+  eth2:
+    provider: beacon-chain.prysm-pyrmont.dappnode:4000
+    client:
+      options:
+      - id: prysm
+        name: Prysm
+        desc: made by Prysmatic Labs
+        beaconImage: prysmaticlabs/prysm-beacon-chain:HEAD-0f1d14-debug #v1.3.3
+        validatorImage: prysmaticlabs/prysm-validator:HEAD-0f1d14-debug #v1.3.3
+        link: https://prysmaticlabs.com/
+        params:
+        - name: Custom Graffiti
+          desc: optional - for adding custom text to signed Eth 2.0 blocks - 16 chars max
+          env: CUSTOM_GRAFFITI
+          regex: ^.{0,16}$

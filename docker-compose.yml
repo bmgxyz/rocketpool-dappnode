@@ -1,6 +1,48 @@
 version: "3.4"
 services:
-  rocketpool-unofficial.public.dappnode.eth:
-    build: .
-    image: "rocketpool-unofficial.public.dappnode.eth:0.1.0"
+  initializer:
+    build: ./initializer
+    volumes:
+      - "rocketpool:/.rocketpool"
+    image: "initializer.rocketpool-unofficial.public.dappnode.eth:0.1.0"
+  validator:
+    image: "prysmaticlabs/prysm-validator:HEAD-0f1d14-debug"
     restart: unless-stopped
+    volumes:
+      - "rocketpool:/.rocketpool"
+    environment:
+      - CUSTOM_GRAFFITI="Rocket Pool + DAppNode <3"
+    entrypoint:
+      - /app/cmd/validator/validator
+      - "--accept-terms-of-use"
+      - "--pyrmont"
+      - "--wallet-dir"
+      - /.rocketpool
+      - "--wallet-password-file"
+      - /.rocketpool/password
+      - "--beacon-rpc-provider"
+      - "beacon-chain.prysm-pyrmont.dappnode:4000"
+      - "--graffiti"
+      - '"$CUSTOM_GRAFFITI"'
+  api:
+    image: "rocketpool/smartnode:v0.0.10"
+    restart: unless-stopped
+    volumes:
+      - "rocketpool:/.rocketpool"
+    entrypoint: /bin/sleep
+    command: infinity
+  node:
+    image: "rocketpool/smartnode:v0.0.10"
+    restart: unless-stopped
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "rocketpool:/.rocketpool"
+    command: node
+  watchtower:
+    image: "rocketpool/smartnode:v0.0.10"
+    restart: unless-stopped
+    volumes:
+      - "rocketpool:/.rocketpool"
+    command: watchtower
+volumes:
+  rocketpool: {}
