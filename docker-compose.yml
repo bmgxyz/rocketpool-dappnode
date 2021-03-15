@@ -4,14 +4,14 @@ services:
     build: ./initializer
     volumes:
       - "rocketpool:/.rocketpool"
-    image: "initializer.rocketpool-unofficial.public.dappnode.eth:0.1.0"
+    image: "initializer.rocketpool-unofficial.public.dappnode.eth:0.1.1"
   validator:
     image: "prysmaticlabs/prysm-validator:HEAD-0f1d14-debug"
     restart: unless-stopped
     volumes:
       - "rocketpool:/.rocketpool"
     environment:
-      - CUSTOM_GRAFFITI="Rocket Pool + DAppNode <3"
+      CUSTOM_GRAFFITI: Rocket Pool + DAppNode <3
     entrypoint:
       - /app/cmd/validator/validator
       - "--accept-terms-of-use"

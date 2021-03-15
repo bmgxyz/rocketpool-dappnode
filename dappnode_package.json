@@ -1,12 +1,24 @@
 {
   "name": "rocketpool-unofficial.public.dappnode.eth",
-  "version": "0.1.0",
-  "description": "Unofficial Rocket Pool package for DAppNode",
+  "version": "0.1.1",
+  "description": "Unofficial package for Rocket Pool, the decentralized staking platform",
   "type": "service",
-  "author": "Bradley Gannon <bradley@bradleygannon.com>",
+  "author": "Bradley Gannon <bradley@bradleygannon.com> (https://github.com/bmgxyz)",
   "categories": ["ETH2.0"],
   "links": {
-    "homepage": "https://github.com/bmgxyz/rocketpool-dappnode"
+    "homepage": "https://github.com/bmgxyz/rocketpool-dappnode",
+    "readme": "https://github.com/bmgxyz/rocketpool-dappnode"
   },
-  "license": "GPL-3.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bmgxyz/rocketpool-dappnode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bmgxyz/rocketpool-dappnode/issues"
+  },
+  "license": "GPL-3.0",
+  "dependencies": {
+    "goerli-geth.dnp.dappnode.eth": "latest",
+    "prysm-pyrmont.dnp.dappnode.eth": "latest"
+  }
 }
