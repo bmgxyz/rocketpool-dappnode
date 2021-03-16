@@ -1,6 +1,6 @@
 {
   "name": "rocketpool-unofficial.public.dappnode.eth",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Unofficial package for Rocket Pool, the decentralized staking platform",
   "type": "service",
   "author": "Bradley Gannon <bradley@bradleygannon.com> (https://github.com/bmgxyz)",

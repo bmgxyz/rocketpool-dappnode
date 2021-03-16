@@ -14,13 +14,9 @@ This package is **minimally viable**. Follow the instructions below to install
 and configure it. **This code is not well-tested and could cause problems for
 you. Use it at your own risk.**
 
-Note that while this package uses the latest Rocket Pool smartnode Docker image
-(0.0.10), it will require one more update in order to be compatible
-with the upcoming Beta 3.0 testnet. This is because the
-`rocketpool.storageAddress` config value will change, as well as the smartnode
-Docker image version. You will probably need to do a fresh install of this
-package at that time, rather than a simple update. Still, you can test out the
-package in its current form ahead of the beta.
+This package is compatible with Rocket Pool Beta 3.0. If you've installed
+previous versions of this package, you must completely remove them before
+installing this version. A simple update will not work.
 
 ## Installation
 
@@ -60,7 +56,7 @@ linked below to run `docker exec` commands manually.
 [0]: https://dappnode.github.io/DAppNodeDocs/install/
 [1]: http://my.dappnode/#/installer/goerli-geth.dnp.dappnode.eth
 [2]: http://my.dappnode/#/installer/prysm-pyrmont.dnp.dappnode.eth
-[3]: http://my.dappnode/#/installer/%2Fipfs%2FQmW5opFfYRVkaA8S1HrxXK4AVS4P5FTikNJXwQLzzaRS1e
+[3]: http://my.dappnode/#/installer/%2Fipfs%2FQmY9hr6JVf8mprcoNUziznzeRBwRmb195DyKtsXknHnrmq
 [4]: https://medium.com/luguslabs/how-to-create-and-manage-a-new-dappnode-package-b23460b4449
 [5]: https://rocket-pool.readthedocs.io/en/latest/smart-node/api.html
 

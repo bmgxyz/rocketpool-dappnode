@@ -4,7 +4,7 @@ services:
     build: ./initializer
     volumes:
       - "rocketpool:/.rocketpool"
-    image: "initializer.rocketpool-unofficial.public.dappnode.eth:0.1.1"
+    image: "initializer.rocketpool-unofficial.public.dappnode.eth:0.2.0"
   validator:
     image: "prysmaticlabs/prysm-validator:HEAD-0f1d14-debug"
     restart: unless-stopped
@@ -25,21 +25,21 @@ services:
       - "--graffiti"
       - '"$CUSTOM_GRAFFITI"'
   api:
-    image: "rocketpool/smartnode:v0.0.10"
+    image: "rocketpool/smartnode:v1.0.0-beta.0"
     restart: unless-stopped
     volumes:
       - "rocketpool:/.rocketpool"
     entrypoint: /bin/sleep
     command: infinity
   node:
-    image: "rocketpool/smartnode:v0.0.10"
+    image: "rocketpool/smartnode:v1.0.0-beta.0"
     restart: unless-stopped
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "rocketpool:/.rocketpool"
     command: node
   watchtower:
-    image: "rocketpool/smartnode:v0.0.10"
+    image: "rocketpool/smartnode:v1.0.0-beta.0"
     restart: unless-stopped
     volumes:
       - "rocketpool:/.rocketpool"
