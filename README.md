@@ -10,15 +10,19 @@ power of Rocket Pool with the ease of DAppNode. An end user should be able to
 install this package in the typical way and start staking test ETH relatively
 painlessly.
 
-This package is **minimally viable**. Follow the instructions below to install
+This package is **DOES NOT WORK**. ~~Follow the instructions below to install
 and configure it. **This code is not well-tested and could cause problems for
-you. Use it at your own risk.**
+you. Use it at your own risk.**~~
 
-This package is compatible with Rocket Pool Beta 3.0. If you've installed
+~~This package is compatible with Rocket Pool Beta 3.0. If you've installed
 previous versions of this package, you must completely remove them before
-installing this version. A simple update will not work.
+installing this version. A simple update will not work.~~
 
 ## Installation
+
+**THE INSTRUCTIONS BELOW WILL NOT WORK. DO NOT FOLLOW THEM.**
+
+*I may come up with another way to make this work in the future.*
 
 This guide assumes that your local workstation runs some sort of sane Linux.
 Other systems aren't supported but can work with relatively simple
